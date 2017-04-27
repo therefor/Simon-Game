@@ -1,0 +1,382 @@
+/*用SCSS编译前的CSS源文件*/
+
+@import "bourbon";
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|VT323|Oswald');
+$background: #333333;
+$white: white;
+$borderColor: grey;
+$ledBackground: #660000;
+$ledOff: #990000;
+$ledOn: #ff3333;
+$border: 3px solid $background;
+
+/* Basic Reset */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  /* Disable mouse selection */
+  -webkit-user-select: none;
+  /* Chrome/Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+ */
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+}
+
+body {
+  background-color: $white;
+  background-image: url("http://wallpapercave.com/wp/gsGFxkc.jpg");
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  width: 416px;
+  height: 416px;
+  postion: relative;
+  //box-sizing: border-box;
+  background-color: $background;
+  margin: 5% auto auto auto;
+  border-radius: 100%;
+  box-shadow: 0 6px 25px 5px black;
+}
+
+.wrap1,
+.wrap2 {
+  margin: 0;
+  width: 416px;
+  height: 208px;
+}
+
+.color {
+  z-index: 10;
+  margin: auto;
+  width: 416px;
+  height: 416px;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  .green {
+    background-color: #33cc33;
+    border-top-left-radius: 100%;
+    margin-left: 16px;
+    margin-top: 16px;
+  }
+  .red {
+    background-color: #cc2900;
+    border-top-right-radius: 100%;
+  }
+  .yellow {
+    background-color: #e6e600;
+    border-bottom-left-radius: 100%;
+    margin-left: 16px;
+  }
+  .blue {
+    background-color: #00a3cc;
+    border-bottom-right-radius: 100%;
+  }
+  .green,
+  .red,
+  .yellow,
+  .blue {
+    opacity: 0.8;
+    z-index: 10;
+    display: inline-block;
+    margin-buttom: 0;
+    height: 192px;
+    width: 192px;
+    cursor: pointer;
+  }
+}
+
+.controlPanel {
+  z-index: 11;
+  position: relative;
+  top: -300px;
+  left: 0;
+  margin: auto;
+  background-color: #ffe6cc;
+  border: 12px solid $background;
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+  & .logo {
+    display: block;
+    font-weight: bold;
+    font-size: 2.2em;
+    color: $background;
+    margin-top: 22px;
+    text-align: center;
+    font-family: 'Alfa Slab One', cursive;
+    & .small {
+      font-size: 0.5em;
+      position: relative;
+      top: -11px;
+      left: -2px;
+    }
+  }
+}
+
+h1,
+h4 {
+  font-family: 'VT323', monospace;
+  color: $background;
+  margin-buttom: 0;
+  margin-after: 0;
+  margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-before: 0;
+}
+
+h4 {
+  text-transform: uppercase;
+}
+
+.control {
+  margin-top: 4px;
+  height: 60px;
+  display: flex;
+  position: relative;
+  text-align: center;
+  justify-content: space-around;
+  .control,
+  .start,
+  .strict {
+    display: inline-block;
+  }
+  .start,
+  .strict {
+    padding-top: 5px;
+    position: relative;
+  }
+  .led {
+    background-color: $ledBackground;
+    font-family: 'VT323', monospace;
+    width: 45px;
+    height: 35px;
+    padding-top: 2px;
+    font-size: 2em;
+    border: $border;
+    border-radius: 7px;
+    cursor: default;
+    .count {
+      color: $ledOff;
+      position: relative;
+      top: -3px;
+      left: -1px;
+    }
+  }
+}
+
+button {
+  width: 30px;
+  height: 30px;
+  border: $border;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+button,
+button:hover,
+button:active,
+button:visited {
+  text-decoration: none;
+  outline: none;
+}
+
+.startButton {
+  background-color: red;
+}
+
+.strictButton {
+  background-color: yellow;
+}
+
+.startButton,
+.strictButton {
+  box-shadow: 0 3px 6px 0px black;
+  &:active {
+    transform: translate(0px, 2px);
+    box-shadow: 0 1px 4px 0px black;
+  ;
+  }
+}
+
+.ledMode {
+  width: 6px;
+  height: 6px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: 2px solid #222;
+  top: -8px;
+  position: absolute;
+  border-radius: 100%;
+  background-color: $ledOff;
+}
+
+.ledOffNumber {
+  color: $ledOff !important;
+}
+
+.ledOnNumber {
+  color: $ledOn !important;
+}
+
+.ledOff {
+  background-color: $ledOff;
+}
+
+.ledOn {
+  background-color: $ledOn;
+}
+
+.onOff {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  h4 {
+    padding-top: 3px;
+  }
+}
+
+.switch {
+  width: 40px;
+  height: 17px;
+  background-color: $background;
+  border: $border;
+  border-radius: 5px;
+  margin-left: 6px;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.switchButton {
+  width: 20px;
+  height: 17px;
+  background-color: #00cca3;
+  border-radius: 3px;
+  position: relative;
+  left: 0px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  .main {
+    margin-top: 3%;
+    transform: scale(0.6);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.cover1 {
+  height: 404px;
+  width: 16px;
+  background-color: $background;
+  position: relative;
+  top: -604px;
+  left: 200px;
+  z-index: 10;
+}
+
+.cover2 {
+  width: 402px;
+  height: 16px;
+  background-color: $background;
+  position: relative;
+  top: -816px;
+  z-index: 10;
+}
+
+.dark {
+  opacity: 0.7 !important;
+}
+
+.light {
+  opacity: 1 !important;
+}

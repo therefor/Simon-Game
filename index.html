@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Simon Game</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <!-- base url -->
+    <!--base href="/"-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Alfa+Slab+One|VT323|Oswald' rel='stylesheet' type='text/css'>
+
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+<div class="main">
+    <div class="color">
+        <div class="wrap1"><span class="green" value="0"></span><span class="red" value="1"></span></div>
+        <div class="wrap2"><span class="yellow" value="3"></span><span class="blue" value="2"></span></div>
+    </div>
+    <div class="controlPanel">
+        <h1 class="logo">Simon<span class="small">®</span></h1>
+        <div class="control">
+            <div>
+                <button class="led"> <span class="count">--</span></button>
+                <h4>count</h4>
+            </div>
+            <div class="start"><span class="ledMode startLed ledOff"></span>
+                <button class="startButton"></button>
+                <h4>start</h4>
+            </div>
+            <div class="strict"><span class="ledMode strictLed ledOff"></span>
+                <button class="strictButton"></button>
+                <h4>strict</h4>
+            </div>
+        </div>
+        <div class="onOff">
+            <h4>off</h4>
+            <div class="switch">
+                <div class="switchButton"></div>
+            </div>
+            <h4>on</h4>
+        </div>
+    </div>
+    <div class="cover1"></div>
+    <div class="cover2"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+//用Pug编译前的html body部分
+div.main
+    div.color
+        div.wrap1
+            span.green(value = 0)
+            span.red(value = 1)
+        div.wrap2
+            span.yellow(value = 3)
+            span.blue(value = 2)
+    div.controlPanel
+        h1.logo Simon
+            span.small ®
+        div.control
+            div
+                button.led
+                    span.count --
+                h4 count
+            div.start
+                span.ledMode.ledOff
+                button.startButton
+                h4 start
+            div.strict
+                span.ledMode.ledOff
+                button.strictButton
+                h4 strict
+        div.onOff
+            h4 off
+            div.switch
+                div.switchButton
+            h4 on
+    div.cover1
+    div.cover2
